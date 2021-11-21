@@ -1,3 +1,3 @@
 #!/bin/sh
 
-php crawl.php
+php main.php

@@ -4,9 +4,9 @@ SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 cd $SCRIPTPATH
 
 git pull
-docker-compose stop clickbotbot clickbotlogin
-docker-compose build --pull clickbotbot
+docker-compose stop qbmaxquotesucher
+docker-compose build --pull qbmaxquotesucher
 docker-compose up -d db
 sleep 5
-docker-compose up --remove-orphans -d clickbotbot
+docker-compose up --remove-orphans -d qbmaxquotesucher
 

@@ -1,15 +1,15 @@
+# Status
+
+STILL IN DEVELOPMENT!
+DO NOT RUN!
+
 # Installation
 
 ```
 cp .env-example .env
 ```
-
-modify entry script in `build/script/entry.sh` to sleep
-
-then 
+then
 
 ```
-doc exec clickbot bash
+./update.sh
 ```
-
-and trigger one action with correct parameters to craete session folder
