@@ -1,0 +1,2 @@
+# qbmaxquotesucher
+16,46 * * * * /path/to/qbmaxquotesucher/update.sh &> /dev/null

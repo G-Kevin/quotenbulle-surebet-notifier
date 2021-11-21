@@ -1,0 +1,24 @@
+version: '3'
+services:
+  qbmaxquotesucher:
+    build: ./build/
+    environment:
+      - USERNAME=${PHONE}
+      - PASSWORD=${API_HASH}
+      - MYSQL_PW=${MYSQL_ROOTPW}
+      - MYSQL_USER=${MYSQL_USER}
+      - TERM=xterm
+    volumes:
+      - '${DATA_STORAGE}/sessions/:/usr/src/app/session/'
+    restart: 'no'
+    depends_on:
+      - db
+  db:
+    image: ${DB_IMAGE}
+    volumes:
+      - '${DATA_STORAGE}mysql/data/:/var/lib/mysql'
+      - './mysql/import/:/docker-entrypoint-initdb.d/'
+    environment:
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOTPW}
+        TZ: Europe/Berlin
+    restart: always
